@@ -7,9 +7,9 @@ namespace :dev do
       show_spinner("Criando BD") {%x(rails db:create)}
       
       show_spinner("Migrando o BD") {%x(rails db:migrate)}
-
-      %x(rails dev:add_coins)
       %x(rails dev:add_mining_types)
+      %x(rails dev:add_coins)
+      
     else
       puts "Você não está no ambiente de desenvolvimento"
     end
@@ -22,17 +22,20 @@ namespace :dev do
           { 
             description: "Bitcoin",
             acronym: "BTC",
-            url_image: "http://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png"
+            url_image: "http://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png",
+            mining_type: MiningType.all.sample
           },   
           {
             description: "Ethereum",
             acronym: "ETH",
-            url_image: "https://d2a4hncphh3gxw.cloudfront.net/image/artwork/40311/89/23/89231ba1d7cd720fb5d00106b33bf9db_40311"
+            url_image: "https://d2a4hncphh3gxw.cloudfront.net/image/artwork/40311/89/23/89231ba1d7cd720fb5d00106b33bf9db_40311",
+            mining_type: MiningType.all.sample
           },
           {
             description: "DASH",
             acronym: "DASH",
-            url_image: "https://wiki.trezor.io/images/Dash.png"
+            url_image: "https://wiki.trezor.io/images/Dash.png",
+            mining_type: MiningType.find_by(acronym: 'PoW')
           }
         ]
 
