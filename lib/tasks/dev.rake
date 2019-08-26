@@ -15,7 +15,7 @@ namespace :dev do
   end
 
   def show_spinner(msg_start, msg_end = "Concluido")
-    spinner = TTY::Spinner.new(":[spinner) #{msg_start}", format: :dots_9)
+    spinner = TTY::Spinner.new("[:spinner) #{msg_start}", format: :dots_9)
     spinner.auto_spin
     yield
     spinner.success("#{msg_end}")

@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_052100) do
+ActiveRecord::Schema.define(version: 2019_08_26_054459) do
 
   create_table "coins", force: :cascade do |t|
     t.string "description"
     t.string "acronym"
     t.string "url_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mining_types", force: :cascade do |t|
+    t.string "name"
+    t.string "acronym"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
