@@ -62,6 +62,10 @@ class CoinsController < ApplicationController
   end
 
   private
+
+    def set_mining_type_opitions
+      mining_type_opitions = MininTyoe.all.pluck(:description, :id)
+    end  
     # Use callbacks to share common setup or constraints between actions.
     def set_coin
       @coin = Coin.find(params[:id])
