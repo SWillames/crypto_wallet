@@ -4,6 +4,10 @@
        coin:
          one: Moeda
          other: Moedas
+       mining_type:
+         one: Tipo de mineração
+         other: Tipos de mineração
+
        attributes:
          coin:
            id: Código
@@ -12,5 +16,11 @@
            url_image: URL_image
            mining_type: Tipo de Mineração
            mining_type_id: ID do tipo de mineração 
+           updated_at: Atualizado em
+           created_at: Criado em
+         mining_types:
+           id: Código
+           description: Descrição
+           acronym: Sigla
            updated_at: Atualizado em
            created_at: Criado em
